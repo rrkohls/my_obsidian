@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  obsidian:
+    image: ghcr.io/linuxserver/obsidian:latest
+    container_name: obsidian
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./vault:/config
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+
